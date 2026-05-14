@@ -1,0 +1,85 @@
+def insertion_sort(arr):
+    arr = arr[:]
+
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
+
+        arr[j + 1] = key
+
+    return arr
+
+
+def merge(left, right):
+    result = []
+
+    i = 0
+    j = 0
+
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+
+    result.extend(left[i:])
+    result.extend(right[j:])
+
+    return result
+
+
+data = [3, 4, 5, 1, 2, 9, 8, 7, 6, 10, 11, 12]
+
+runs = [
+    [3, 4, 5],
+    [1, 2, 9],
+    [8, 7, 6],
+    [10, 11, 12]
+]
+
+print("Run 1")
+print("原始片段:", runs[0])
+run1 = insertion_sort(runs[0])
+print("處理後 run:", run1)
+print()
+
+print("Run 2")
+print("原始片段:", runs[1])
+run2 = insertion_sort(runs[1])
+print("處理後 run:", run2)
+print()
+
+print("Run 3")
+print("原始片段:", runs[2])
+run3 = insertion_sort(runs[2])
+print("處理後 run:", run3)
+print()
+
+print("Run 4")
+print("原始片段:", runs[3])
+run4 = insertion_sort(runs[3])
+print("處理後 run:", run4)
+print()
+
+print("第一輪合併 A")
+merge_a = merge(run1, run2)
+print("合併內容:", run1, "+", run2)
+print("合併結果:", merge_a)
+print()
+
+print("第一輪合併 B")
+merge_b = merge(run3, run4)
+print("合併內容:", run3, "+", run4)
+print("合併結果:", merge_b)
+print()
+
+print("最後合併")
+final_result = merge(merge_a, merge_b)
+print("合併內容:", merge_a, "+", merge_b)
+print("合併結果:", final_result)
