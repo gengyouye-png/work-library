@@ -1,3 +1,4 @@
+#選擇排序法
 data =  [8, 4, 6, 2, 7, 3]
 def selection_sort(data):
     for i in range(len(data) - 1):
