@@ -1,21 +1,12 @@
-def flatten(data):
-
-    if not isinstance(data, list):
-        return [data]
-
-    result = []
-
-    for item in data:
-        result += flatten(item)
-
-    return result
-
-
+def bubble(num):
+    for i in range(len(num)-1):
+        for j in range(len(num) -1 -i):
+            if num[j] > num[j + 1]:
+                num[j], num[j + 1] = num[j + 1] , num[j]
+        print(num)
+        return num
+    
 def main():
-
-    data = eval(input("data = "))
-
-    print(flatten(data))
-
-
+    data = list(map(int , input("num:").split()))
+    print(bubble(data))
 main()
