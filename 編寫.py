@@ -1,12 +1,20 @@
-def bubble(num):
-    for i in range(len(num)-1):
-        for j in range(len(num) -1 -i):
-            if num[j] > num[j + 1]:
-                num[j], num[j + 1] = num[j + 1] , num[j]
-        print(num)
-        return num
-    
+def merge_sorted(L, R):
+    result = []
+    while len(L) and len(R):
+        if (L[0] <  R[0]):
+            result.append(L.pop(0))
+        else:
+            result.append(R.pop(0))
+    result = result + L if  len(L) else result + R 
+    return result
+
+
 def main():
-    data = list(map(int , input("num:").split()))
-    print(bubble(data))
+    L = []
+    R = []
+    L = list(map(int , input("L : ").split()))
+    R = list(map(int , input("R : ").split()))
+    print(merge_sorted(L , R))
 main()
+    
+    

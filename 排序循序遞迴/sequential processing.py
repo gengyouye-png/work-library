@@ -20,3 +20,39 @@ def main():
     summarize(number)
     print("min:",summarize(number)[1],"max:",summarize(number)[2],"sum:",summarize(number)[0],f"avg:{summarize(number)[3]:.4f}")
 main()
+
+
+'''def summarize(nums):
+    total = 0
+
+    min_num = nums[0]
+    max_num = nums[0]
+
+    for i in range(len(nums)):
+        total += nums[i]
+
+        if nums[i] < min_num:
+            min_num = nums[i]
+
+        if nums[i] > max_num:
+            max_num = nums[i]
+
+    avg = total / len(nums)
+
+    return total, min_num, max_num, avg
+
+
+def main():
+    nums = list(map(int, input("nums: ").split()))
+
+    result = summarize(nums)
+
+    print(
+        "min:", result[1],
+        "max:", result[2],
+        "sum:", result[0],
+        f"avg:{result[3]:.4f}"
+    )
+
+
+main()'''
