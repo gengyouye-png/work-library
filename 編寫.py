@@ -1,20 +1,15 @@
-def merge_sorted(L, R):
-    result = []
-    while len(L) and len(R):
-        if (L[0] <  R[0]):
-            result.append(L.pop(0))
-        else:
-            result.append(R.pop(0))
-    result = result + L if  len(L) else result + R 
-    return result
-
-
+def binary_search_recursive(nums , traget , left , right):
+    if left > right :
+        return -1
+    mid = (left + right) // 2
+    if nums[mid] == traget:
+        return mid
+    elif nums[mid] < traget:
+        return binary_search_recursive(nums , traget , mid + 1 , right)
+    else:
+        return binary_search_recursive(nums , right , left , mid -1)
 def main():
-    L = []
-    R = []
-    L = list(map(int , input("L : ").split()))
-    R = list(map(int , input("R : ").split()))
-    print(merge_sorted(L , R))
+    nums = [1, 3, 5, 7, 9, 11]
+    target = int(input("輸入:"))
+    print(binary_search_recursive(nums, target, 0, len(nums) - 1))
 main()
-    
-    

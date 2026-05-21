@@ -1,20 +1,9 @@
-#第八題
-#reverse_string
-
-
-def reverse_string(s):
-
+def reverse_sting(s):
     if len(s) <= 1:
         return s
-
-    return reverse_string(s[1:]) + s[0]
-
-
+    return reverse_sting (s[1:] )+ s[0]
 def main():
 
-    s = input("s = ")
-
-    print(reverse_string(s))
-
-
+    s = input("輸入:")
+    print(reverse_sting(s))
 main()
