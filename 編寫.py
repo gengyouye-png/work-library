@@ -1,15 +1,13 @@
-def binary_search_recursive(nums , traget , left , right):
-    if left > right :
-        return -1
-    mid = (left + right) // 2
-    if nums[mid] == traget:
-        return mid
-    elif nums[mid] < traget:
-        return binary_search_recursive(nums , traget , mid + 1 , right)
-    else:
-        return binary_search_recursive(nums , right , left , mid -1)
+def sort_numbers(nums):
+    n = len(nums)
+    while n > 1:
+        for i in range(n - 1):
+            if nums[i] > nums[i +1]:
+                nums[i] , nums[i + 1] = nums[i + 1],nums[i]
+        n -= 1
+    return nums
 def main():
-    nums = [1, 3, 5, 7, 9, 11]
-    target = int(input("輸入:"))
-    print(binary_search_recursive(nums, target, 0, len(nums) - 1))
+    nums = []
+    nums = list(map(int , input("輸入:").split()))
+    print(sort_numbers(nums))
 main()

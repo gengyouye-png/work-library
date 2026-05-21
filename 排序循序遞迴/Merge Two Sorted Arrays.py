@@ -49,7 +49,7 @@ main()
 def main():
     L = []
     R = []
-    L = list(map(int , input("L : ").split()))
+    L = list(map(int , ("L : ").split()))
     R = list(map(int , input("R : ").split()))
     print(merge_sorted(L , R))
 main()
