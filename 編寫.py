@@ -1,13 +1,18 @@
-def sort_numbers(nums):
-    n = len(nums)
-    while n > 1:
-        for i in range(n - 1):
-            if nums[i] > nums[i +1]:
-                nums[i] , nums[i + 1] = nums[i + 1],nums[i]
-        n -= 1
-    return nums
+def sort(students):
+    
+    return sorted(
+        students,
+        key = lambda x : (-x['score'] , x['name'])
+    )
 def main():
-    nums = []
-    nums = list(map(int , input("輸入:").split()))
-    print(sort_numbers(nums))
+    students = []
+    n = int(input("學生人數:"))
+    for i in range(n):
+        name = input("name:")
+        score = int(input("score:"))
+        students.append({
+            'name':name,
+            'score':score
+        })
+    print(sort(students))
 main()

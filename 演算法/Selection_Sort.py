@@ -1,13 +1,13 @@
-#選擇排序法
-data =  [8, 4, 6, 2, 7, 3]
-def selection_sort(data):
-    for i in range(len(data) - 1):
-        min = i 
-        for j in range(i + 1, len(data)):
-            if data[j] < data[min]:
+def sort(nums):
+    for i in range(len(nums) - 1):
+        min = i
+        for j in range(1 + i ,len(nums)):
+            if nums[min] > nums[j]:
                 min = j
-        swap(data , i , min)
-        print(data)
-def swap(data , i , min):
-    data[i] , data[min] = data[min] , data[i]
-selection_sort(data)
+        nums[min], nums[j] = nums[j] , nums[min]
+    return nums
+def main():
+    nums = []
+    nums = list(map(int , input("nums:").split()))
+    print(sort(nums))
+main()
