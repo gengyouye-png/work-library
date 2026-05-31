@@ -1,3 +1,4 @@
+#第9題
 def binary_search_recursive(nums , traget , left , right):
     if left > right :
         return -1
@@ -13,4 +14,4 @@ def main():
     target = int(input("輸入:"))
     print(binary_search_recursive(nums, target, 0, len(nums) - 1))
 main()
-        
+    
