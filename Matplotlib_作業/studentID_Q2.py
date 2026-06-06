@@ -21,3 +21,4 @@ plt.axhline(
 )
 plt.legend()
 plt.show()
+plt.savefig("q2_scores.png")
