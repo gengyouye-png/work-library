@@ -5,7 +5,7 @@ plt.rcParams["font.family"] = "Microsoft JhengHei"
 plt.rcParams["axes.unicode_minus"] = False
 x = np.array(["國文", "英文", "數學", "程式設計"])
 y = np.array([76, 68, 59, 82])
-plt.title("科目平均分數比較")
+plt.title = ("科目平均分數比較")
 
 bars = plt.bar(x, y)
 plt.bar_label(
